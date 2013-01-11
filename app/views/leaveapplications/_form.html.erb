@@ -1,0 +1,39 @@
+<%= form_for(@leaveapplication) do |f| %>
+  <% if @leaveapplication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leaveapplication.errors.count, "error") %> prohibited this leaveapplication from being saved:</h2>
+
+      <ul>
+      <% @leaveapplication.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :leavetype %><br />
+    <%= f.select :leavetype,:collection => [" ","C.L.", "P.L."]  %>
+  </div>
+  <div class="field">
+    <%= f.label :from %><br />
+    <%= f.datetime_select :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.datetime_select :to %>
+  </div>
+   <%= f.hidden_field :comment %>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

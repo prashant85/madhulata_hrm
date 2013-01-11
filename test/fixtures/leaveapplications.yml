@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  subject: MyString
+  description: MyString
+  leavetype: MyString
+  from: 2013-01-10 15:41:33
+  to: 2013-01-10 15:41:33
+  comment: MyString
+
+two:
+  name: MyString
+  subject: MyString
+  description: MyString
+  leavetype: MyString
+  from: 2013-01-10 15:41:33
+  to: 2013-01-10 15:41:33
+  comment: MyString
