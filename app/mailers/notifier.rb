@@ -8,7 +8,9 @@ class Notifier < ActionMailer::Base
   #
   def sending_request(leaveapplication)
     @leaveapplication = leaveapplication 
-    mail :to => "prashant@rubyonrails4ror.com", :subject => 'Leave application'
+    mail :to => "prashant@rubyonrails4ror.com",
+     :cc => ["bcc@example.com","watcher@example.com"],
+      :subject => 'Leave application'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

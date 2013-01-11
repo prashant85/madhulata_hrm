@@ -2,7 +2,7 @@
 <table>
   <tr>
     <!-- <th>Name</th> -->
-    <th>Subject</th>
+   <!--  <th>Subject</th> -->
     <th>Leavetype</th>
     <th>From</th>
     <th>To</th>
@@ -13,19 +13,35 @@
 <% @leaveapplications.each do |leaveapplication| %>
   <tr>
     <!-- <td><%= leaveapplication.name %></td> -->
-    <td><%= leaveapplication.subject %></td>
+    <!-- <td><%= leaveapplication.subject %></td> -->
    <!--  <td><%= leaveapplication.description %></td> -->
     <td><%= leaveapplication.leavetype %></td>
     <td><%= leaveapplication.from.strftime("%d/%m/%y") %></td>
     <td><%= leaveapplication.to.strftime("%d/%m/%y") %></td>
     <td><%= leaveapplication.comment %></td>
-    <td><%= link_to 'Show', leaveapplication %>
-    <%= link_to 'Edit', edit_leaveapplication_path(leaveapplication) %>
-    <%= link_to 'Destroy', leaveapplication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <td><%= link_to 'Show', leaveapplication %></td>
+    
+  </tr
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Leaveapplication', new_leaveapplication_path %>
+<button id="test">Apply for leave </button>
+<button>C.L.</button>
+<button>P.L.</button>
+<div id="abc">
+   <%= render :partial => 'form'%>
+</div>
+<style>
+#abc 
+{ 
+  display:none;
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("#test").click(function(){
+    $("#abc").show();
+     });
+    });
+</script>

@@ -3,7 +3,7 @@ class LeaveapplicationsController < ApplicationController
   # GET /leaveapplications.json
   def index
     @leaveapplications = Leaveapplication.where(:user_id => current_user.id)
-
+    @leaveapplication = Leaveapplication.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @leaveapplications }
@@ -47,7 +47,7 @@ class LeaveapplicationsController < ApplicationController
     respond_to do |format|
       if @leaveapplication.save
         Notifier.sending_request(@leaveapplication).deliver
-        format.html { redirect_to @leaveapplication, notice: 'Leaveapplication was successfully created.' }
+        format.html { redirect_to leaveapplications_path, notice: 'Leaveapplication was successfully created.' }
         format.json { render json: @leaveapplication, status: :created, location: @leaveapplication }
       else
         format.html { render action: "new" }
