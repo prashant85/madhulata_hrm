@@ -20,5 +20,19 @@ ActiveAdmin.register Leaveapplication do
 		column :comment, :label => "Status"		
         default_actions	
 	 end
-    
+
+ controller do
+	 def update
+	 	@leaveapplication = Leaveapplication.find(params[:id])       
+      respond_to do |format|
+        if @leaveapplication.update_attributes(params[:leaveapplication])
+          Notifier.response_request(@leaveapplication).deliver   
+          format.html { redirect_to admin_leaveapplications_path notice: 'Leaveapplication was successfully updated.' }
+          format.json { head :no_content }
+        
+        end
+      end
+    end
+  end
+
 end
