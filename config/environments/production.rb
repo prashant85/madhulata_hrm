@@ -60,13 +60,12 @@ MadhulataInfotechHrm::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  config.consider_all_requests_local = true
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-#   config.action_mailer.default_url_options = { :host => 'http://young-oasis-3021.herokuapp.com/' }
-#   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'http://dry-brushlands-2732.herokuapp.com/' }
+   config.action_mailer.raise_delivery_errors = true
 #   config.action_mailer.delivery_method = :smtp
 #   config.action_mailer.smtp_settings = {
 #     :enable_starttls_auto => true,
@@ -77,20 +76,17 @@ MadhulataInfotechHrm::Application.configure do
 #     :user_name => "dixitprashant855@gmail.com",
 #     :password => "9911551"
 # }
-config.action_mailer.default_url_options = { :host => 'dry-brushlands-2732.herokuapp.com' }
-
-   MadhulataInfotechHrm::Application.initialize!
-
   MadhulataInfotechHrm::Application.configure do
    config.action_mailer.delivery_method = :smtp
-
-  ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 25,
-      :domain               => "google.com",
-      :user_name            => "dixitprashant855@gmail.com",
-      :password             => "9911551528",
-      :authentication       => "plain",
-      :enable_starttls_auto => true
-  }
+   config.action_mailer.smtp_settings = {
+     :address => "smtp.gmail.com" ,
+     :port => 587,
+     :domain => "gmail.com" ,
+     :authentication => "plain" ,
+     :user_name => "dixitprashant855@gmail.com" ,
+     :password => "9911551528" ,
+     :enable_starttls_auto => true
+    }
+    config.action_mailer.raise_delivery_errors = true
+  end
 end

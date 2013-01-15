@@ -36,10 +36,8 @@ MadhulataInfotechHrm::Application.configure do
   config.assets.debug = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   ADMIN_EMAIL="prashant@rubyonrails4ror.com"
-
- MadhulataInfotechHrm::Application.initialize!
-
-  MadhulataInfotechHrm::Application.configure do
+  
+MadhulataInfotechHrm::Application.configure do
    config.action_mailer.delivery_method = :smtp
    config.action_mailer.smtp_settings = {
      :address => "smtp.gmail.com" ,
@@ -51,4 +49,6 @@ MadhulataInfotechHrm::Application.configure do
      :enable_starttls_auto => true
     }
     config.action_mailer.raise_delivery_errors = true
+end
+
 end

@@ -1,8 +1,8 @@
 # Load the rails application
-# require File.expand_path('../application', __FILE__)
+require File.expand_path('../application', __FILE__)
 
-# # Initialize the rails application
-# MadhulataInfotechHrm::Application.initialize!
+# Initialize the rails application
+MadhulataInfotechHrm::Application.initialize!
 
 # MadhulataInfotechHrm::Application.configure do
 #    config.action_mailer.delivery_method = :smtp
@@ -16,5 +16,5 @@
 #      :enable_starttls_auto => true
 #     }
 #     config.action_mailer.raise_delivery_errors = true
-end
+# end
 
