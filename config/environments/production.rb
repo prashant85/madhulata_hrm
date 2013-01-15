@@ -77,4 +77,20 @@ MadhulataInfotechHrm::Application.configure do
 #     :user_name => "dixitprashant855@gmail.com",
 #     :password => "9911551"
 # }
+config.action_mailer.default_url_options = { :host => 'dry-brushlands-2732.herokuapp.com' }
+
+   MadhulataInfotechHrm::Application.initialize!
+
+  MadhulataInfotechHrm::Application.configure do
+   config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 25,
+      :domain               => "google.com",
+      :user_name            => "dixitprashant855@gmail.com",
+      :password             => "9911551528",
+      :authentication       => "plain",
+      :enable_starttls_auto => true
+  }
 end
