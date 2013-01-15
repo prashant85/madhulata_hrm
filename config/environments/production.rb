@@ -5,7 +5,7 @@ MadhulataInfotechHrm::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = false
+  #config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
@@ -66,6 +66,7 @@ MadhulataInfotechHrm::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
     config.action_mailer.delivery_method = :smtp
+    config.consider_all_requests_local = true
    config.action_mailer.perform_deliveries = true
    config.action_mailer.default :charset => "utf-8"
    config.action_mailer.smtp_settings = {
