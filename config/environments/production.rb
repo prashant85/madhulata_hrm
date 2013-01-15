@@ -83,7 +83,7 @@ MadhulataInfotechHrm::Application.configure do
      :address => "smtp.gmail.com" ,
      :port => 587,
      :domain => "gmail.com" ,
-     :authentication => "plain" ,
+     :authentication => "login" ,
      :user_name => "dixitprashant855@gmail.com" ,
      :password => "9911551528" ,
      :enable_starttls_auto => true
