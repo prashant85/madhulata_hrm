@@ -78,17 +78,17 @@ MadhulataInfotechHrm::Application.configure do
 #     :password => "9911551"
 # }
   MadhulataInfotechHrm::Application.configure do
-   # config.action_mailer.delivery_method = :smtp
+    config.action_mailer.delivery_method = :smtp
    config.action_mailer.perform_deliveries = true
    config.action_mailer.default :charset => "utf-8"
-   config.action_mailer.smtp_settings = {
-     :address => "smtp.gmail.com" ,
-     :port => 587,
-     :domain => "gmail.com" ,
-     :authentication => "login" ,
-     :user_name => "dixitprashant855@gmail.com" ,
-     :password => "9911551528" ,
-     :enable_starttls_auto => true
-    }
+   config.action_mailer.smtp_settings = smtp_settings = {
+      :address              => "wp240.webpack.hosteurope.de",
+      :port                 => 25,
+      :domain               => "aviendu.com",
+      :user_name            => "wp10961995-avienduinfo",
+      :password             => "aviendu!222",
+      :authentication       => "plain",
+      :enable_starttls_auto => true
+  }
   end
 end
