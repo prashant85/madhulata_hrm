@@ -43,6 +43,7 @@ class LeaveapplicationsController < ApplicationController
     @leaveapplication = Leaveapplication.new(params[:leaveapplication])
     @leaveapplication.name = current_user.name
     @leaveapplication.user_id = current_user.id
+    @leaveapplication.employee_detail_id = current_user.id
     @leaveapplication.comment = "Pending"
     respond_to do |format|
       if @leaveapplication.save

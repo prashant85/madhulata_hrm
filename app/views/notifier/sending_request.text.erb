@@ -6,6 +6,7 @@ is sending a leave requests.
 <%= @leaveapplication.subject%>
 <%= @leaveapplication.description %>
 from <%= @leaveapplication.from %> to <%= @leaveapplication.to %>
+Total Leave is <%= (@leaveapplication.to.yday-@leaveapplication.from.yday)+1%>
 Please click on following link
 
 <a href=http://localhost:3000/admin>Clik On It</a>

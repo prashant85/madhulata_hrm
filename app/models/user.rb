@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_create :employee_information 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,5 +9,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,:name
   has_many :leaveapplications
+  has_one :employee_detail
   # attr_accessible :title, :body
+  
+  def employee_information
+    id = self.id
+    name = self.name
+   EmployeeDetail.create(:name => self.name, :id => self.id)
+  end
 end
