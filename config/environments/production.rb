@@ -66,6 +66,7 @@ MadhulataInfotechHrm::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.default_url_options = { :host => 'http://dry-brushlands-2732.herokuapp.com/' }
    config.action_mailer.raise_delivery_errors = true
+   config.consider_all_requests_local = true
 #   config.action_mailer.delivery_method = :smtp
 #   config.action_mailer.smtp_settings = {
 #     :enable_starttls_auto => true,
