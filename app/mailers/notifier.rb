@@ -9,7 +9,7 @@ class Notifier < ActionMailer::Base
   def sending_request(leaveapplication)
     @leaveapplication = leaveapplication 
     mail :to => "prashant@rubyonrails4ror.com",:from=> User.find(@leaveapplication.user_id).email.to_s,
-     :cc => ["bcc@example.com","watcher@example.com"],
+     :cc => ["badri@drupaltechie.com"],
       :subject => 'Leave application'
   end
 
@@ -20,6 +20,6 @@ class Notifier < ActionMailer::Base
   #
   def response_request(leaveapplication)
      @leaveapplication = leaveapplication   
-    mail :to=> "badri@gmail.com",:from=> "prashant@rubyonrails4ror.com",:cc => User.find(@leaveapplication.user_id).email.to_s,:subject=>"Response"
+    mail :to=> "badri@drupaltechie.com",:from=> "prashant@rubyonrails4ror.com",:cc => User.find(@leaveapplication.user_id).email.to_s,:subject=>"Response"
   end
 end
