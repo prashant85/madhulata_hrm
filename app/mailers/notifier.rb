@@ -5,12 +5,12 @@ class Notifier < ActionMailer::Base
   # with the following lookup:
   #
   #   en.notifier.sending_request.subject
-  # :from=> "prashant@rubyonrails4ror.com",
+   default :from => "webmaster@rubyonrails4ror.com"
   def sending_request(leaveapplication)
     @leaveapplication = leaveapplication 
-    mail :to => "prashant@rubyonrails4ror.com",
-     :cc => ["badri@drupaltechie.com"],
-      :subject => 'Leave application'
+     mail :to => "abhijeet@drupaltechie.com",
+          :bcc => ["badri@drupaltechie.com"],
+         :subject => 'Leave application'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -20,6 +20,6 @@ class Notifier < ActionMailer::Base
   #
   def response_request(leaveapplication)
      @leaveapplication = leaveapplication   
-    mail :to=> "badri@drupaltechie.com",:cc => User.find(@leaveapplication.user_id).email.to_s,:subject=>"Response"
+    mail :to=> User.find(@leaveapplication.user_id).email.to_s,:cc=> "abhijeet@drupaltechie.com",:subject=>"Response"
   end
 end

@@ -34,21 +34,23 @@ MadhulataInfotechHrm::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  ADMIN_EMAIL="prashant@rubyonrails4ror.com"
-  
-MadhulataInfotechHrm::Application.configure do
-   config.action_mailer.delivery_method = :smtp
-   config.action_mailer.smtp_settings = {
-     :address => "smtp.gmail.com" ,
-     :port => 587,
-     :domain => "gmail.com" ,
-     :authentication => "plain" ,
-     :user_name => "dixitprashant855@gmail.com" ,
-     :password => "9911551528" ,
-     :enable_starttls_auto => true
-    }
-    config.action_mailer.raise_delivery_errors = true
-end
+ 
+config.action_mailer.default_url_options = { :host => 'rubyonrails4ror.com' }
+
+  # config.after_initialize do
+  #   ActiveMerchant::Billing::Base.mode = :test
+  # end
+
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "rubyonrails4ror.com",
+      :user_name            => "webmaster@rubyonrails4ror.com",
+      :password             => "rubyonrails",
+      :authentication       => "plain",
+      :enable_starttls_auto => true
+  }
 
 end

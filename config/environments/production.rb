@@ -64,19 +64,21 @@ MadhulataInfotechHrm::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-   config.action_mailer.default_url_options = { :host => 'dry-brushlands-2732.herokuapp.com' }
-    config.action_mailer.delivery_method = :smtp
-    config.consider_all_requests_local = true
-   config.action_mailer.perform_deliveries = true
-   config.action_mailer.default :charset => "utf-8"
-   config.action_mailer.smtp_settings = {
+  config.action_mailer.default_url_options = { :host => 'rubyonrails4ror.com' }
+
+  # config.after_initialize do
+  #   ActiveMerchant::Billing::Base.mode = :test
+  # end
+
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => "gmail.com",
-      :user_name            => "dixitprashant855@gmail.com",
-      :password             => "9911551528",
+      :domain               => "rubyonrails4ror.com",
+      :user_name            => "webmaster@rubyonrails4ror.com",
+      :password             => "rubyonrails",
       :authentication       => "plain",
       :enable_starttls_auto => true
-      }
-
+  }
 end
