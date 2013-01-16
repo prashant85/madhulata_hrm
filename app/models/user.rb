@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
     name = self.name
    EmployeeDetail.create(:name => self.name, :id => self.id)
   end
+
+  
 end

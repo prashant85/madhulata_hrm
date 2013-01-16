@@ -1,8 +1,11 @@
 <h1>Listing Leave Applications</h1>
 <%= @leaveapplication.prashant %><br/>
-Casual Leave:<%= @leaveapplication.casual_leave.to_i %><br/>
-Priviledge Levae :<%= @leaveapplication.previlige_leave.to_i%>
-Subject :<%= Leaveapplication.last.subject %>
+<%#= @leaveapplication.total_day%>
+<b>Casual Leave:</b><%= @leaveapplication.casual_leave.to_i %><br/>
+<b>Priviledge Levae</b> :<%= @leaveapplication.previlige_leave.to_i%><br/>
+<b>Join Date:</b><%= EmployeeDetail.find(current_user.id).join_date.strftime("%d/%m/%Y") %><br/>
+<!-- <b>Total Days:</b> <%#=364 - EmployeeDetail.find(current_user.id).join_date.yday + Time.now.yday %></br> -->
+
 <table>
   <tr>
     <!-- <th>Name</th> -->

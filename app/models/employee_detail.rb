@@ -9,4 +9,5 @@ class EmployeeDetail < ActiveRecord::Base
   accepts_nested_attributes_for :photos, :allow_destroy => true 
   accepts_nested_attributes_for :last_job_details, :allow_destroy => true 
 
+  
 end
