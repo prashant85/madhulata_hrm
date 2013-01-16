@@ -1,14 +1,6 @@
 MadhulataInfotechHrm::Application.routes.draw do
   devise_for :users
-
-
   resources :leaveapplications
-
-
-  resources :leaves
-  post "/leaves" => "leaves#create"
-
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
