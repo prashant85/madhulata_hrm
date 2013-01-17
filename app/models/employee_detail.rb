@@ -1,7 +1,8 @@
 class EmployeeDetail < ActiveRecord::Base
   attr_accessible :category,:photos_attributes, :image, :contract_detail, :employement_status,
    :job_specification, :job_title, :join_date, :local_address, :location, :name, :permanent_address,
-    :phone_no, :sub_unit, :last_job_details_attributes, :user_id, :confirmation_date
+    :phone_no, :sub_unit, :last_job_details_attributes, :user_id, :confirmation_date, :father_name, :email, 
+    :blood_group, :date_of_birth
     belongs_to :user
     has_many :leaveapplications
   has_many :photos

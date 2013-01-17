@@ -27,6 +27,7 @@ ActiveAdmin.register Leaveapplication do
         default_actions	
 	 end
 
+
  controller do
 	 def update
 	 	@leaveapplication = Leaveapplication.find(params[:id])       
