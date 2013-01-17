@@ -69,7 +69,7 @@ MadhulataInfotechHrm::Application.configure do
   # config.after_initialize do
   #   ActiveMerchant::Billing::Base.mode = :test
   # end
-
+  config.consider_all_requests_local = true
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
