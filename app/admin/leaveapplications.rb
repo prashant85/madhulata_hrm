@@ -8,7 +8,7 @@ ActiveAdmin.register Leaveapplication do
 	       f.input :from ,:as=> :date
 	       f.input :to, :as=> :date
 	     end  
-	    f.input :comment, :label => "Status" ,:collection => ["Pending", "Accepted", "Rejected"], :default => "pending"
+	    f.input :comment, :label => "Status" ,:collection => ["Pending", "Accepted", "Rejected","Revoked"], :default => "pending"
   
      end
         f.buttons "Submit"
@@ -26,6 +26,15 @@ ActiveAdmin.register Leaveapplication do
 		column "Status"	,:comment 	
         default_actions	
 	 end
+
+	 show :title => :name do
+	 	attributes_table do	
+	 		row :name
+	 		row :from
+	 		row :to 
+	 		
+	 	 end
+	 end	
 
 
  controller do

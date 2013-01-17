@@ -1,11 +1,11 @@
 <h1>Listing Leave Applications</h1>
 <%= @leaveapplication.prashant %><br/>
 <%#= @leaveapplication.total_day%>
-<b>Casual Leave:</b><%= @leaveapplication.casual_leave.to_i %><br/>
-<b>Priviledge Levae</b> :<%#= @leaveapplication.previlige_leave%><br/>
-   <% if EmployeeDetail.find(current_user.id).join_date == nil %>
+ <% if EmployeeDetail.find(current_user.id).join_date == nil %>
        <%= render :partial => 'errortype' %>
    <% else %>
+   <b>Casual Leave:</b><%= @leaveapplication.casual_leave.to_i %><br/>
+   <b>Priviledge Levae</b> :<%#= @leaveapplication.previlige_leave%><br/>
         <b>Join Date:</b><%= EmployeeDetail.find(current_user.id).join_date.strftime("%d/%m/%Y") %><br/>
        
 <!-- <b>Total Days:</b> <%#=364 - EmployeeDetail.find(current_user.id).join_date.yday + Time.now.yday %></br> -->
