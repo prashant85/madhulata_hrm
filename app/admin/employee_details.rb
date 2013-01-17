@@ -4,7 +4,7 @@ ActiveAdmin.register EmployeeDetail do
 		f.inputs "Personal Information" do
 			f.input :name
 			f.input :father_name
-			f.input :date_of_birth, :as => :date
+			f.input :date_of_birth, :start_year => Time.now.year - 100, :end_year => Time.now.year + 100, :as => :date 
 			f.input :email
 			f.input :phone_no, :label => "Contact No."
 			f.input :local_address, :label => "Correspondence Address"
