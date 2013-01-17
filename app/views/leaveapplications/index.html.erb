@@ -3,7 +3,7 @@
 <%#= @leaveapplication.total_day%>
 <b>Casual Leave:</b><%= @leaveapplication.casual_leave.to_i %><br/>
 <b>Priviledge Levae</b> :<%#= @leaveapplication.previlige_leave%><br/>
-<b>Join Date:</b><%= EmployeeDetail.find(current_user.id).join_date.strftime("%d/%m/%Y") %><br/>
+<b>Join Date:</b><%= EmployeeDetail.find(current_user.id).join_date %><br/>
 <!-- <b>Total Days:</b> <%#=364 - EmployeeDetail.find(current_user.id).join_date.yday + Time.now.yday %></br> -->
 
 <table>

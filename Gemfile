@@ -37,5 +37,5 @@ gem "therubyracer"
 gem 'activeadmin'
 gem 'paperclip'
 gem "aws-sdk"
-
 gem "pg"
+gem 'heroku'
