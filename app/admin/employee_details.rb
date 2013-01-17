@@ -1,20 +1,21 @@
 ActiveAdmin.register EmployeeDetail do
-	actions :all
+	# actions :all
 	form do |f|
 		f.inputs "Personal Information" do
 			f.input :name
-			f.input :permanent_address
-			f.input :local_address
-			f.input :phone_no
-			f.input :location			
-			f.input :category, :as=> :select, :include_blank => true, :collection => ["gen", "freedomFighter", "Handicap", "special"]
+			f.input :phone_no, :label => "Contact No."
+			f.input :local_address, :label => "Correspondence Address"
+			f.input :permanent_address	
+		    # f.input :category, :as=> :select, :include_blank => true, :collection => ["gen", "freedomFighter", "Handicap", "special"]
 		end
 		f.inputs "Job Details" do
 		   f.input :job_title
 		   f.input :job_specification
+		   f.input :location	
 		   f.input :employement_status, :as=> :select, :include_blank=> true ,:collection => ["Permanent", "trainee", "developer", "tester", "admin", "HR", "designer" ]
-		   #f.input :sub_unit, :as => :select , :include_blank => true, :collection => ["admin", "employee"]
 		   f.input :join_date
+		   f.input :confirmation_date
+		   f.input :sub_unit , :label => "Employee ID"	
 		end
 		f.inputs "Image" do
 		  f.has_many :photos do |p|
@@ -22,23 +23,24 @@ ActiveAdmin.register EmployeeDetail do
               p.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove image'
            end 
         end
-        f.inputs "Previous Job Details" do
+          f.inputs "Previous Employment Status" do
         	f.has_many :last_job_details do |p|
         		p.input :company
+        		p.input :job_description, :label => "Designation"
         		p.input :start_date
-        		p.input :end_date
-        		p.input :job_description
+        		p.input :end_date       		
         	end
-        end		
-		f.inputs "Contract Details" do
-		   f.input :contract_detail 
-	    end 
+       		end
+       		f.inputs do
+		      f.input :contract_detail, :label => "Contract Details" 
+		  end
 	    f.buttons "submit"
 	end	
    index do
 		column :id
 		column :name
 		column :phone_no
+		column :join_date
 		column :permanent_address
 		column :local_address
 		column :employement_status		
@@ -65,6 +67,7 @@ ActiveAdmin.register EmployeeDetail do
             row :employement_status
             row :join_date
             row :job_title
+            row :confirmation_date
            
 		end
 	end

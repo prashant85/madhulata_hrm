@@ -10,14 +10,18 @@ class Leaveapplication < ActiveRecord::Base
     end
     leave
   end
+
+  def joining
+
+      EmployeeDetail.where(:id=> user_id)
+    end
+
    def previlige_leave
-     if self.total_day > 180
-      leave = Time.now.strftime("%m").to_i
-     end 
-  end
+     self.joining
+   end
    def total_day
     Time.now.yday
-    # dateofjoining=EmployeeDetail.find(@leaveapplication).join_date
+     #dateofjoining=EmployeeDetail.find(@leaveapplication.employee_detail_id).join_date
     #   # EmployeeDetail.find(current_user.id).join_date
     #   if dateofjoining.strftime("%y").to_i != Time.now.strftime("%y").to_i
     #      if

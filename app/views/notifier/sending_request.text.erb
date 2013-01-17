@@ -1,12 +1,11 @@
 Notifier#sending_request
 
-Hi,
-<%= @leaveapplication.name %>
-is sending a leave requests. 
-<%= @leaveapplication.subject%>
-<%= @leaveapplication.description %>
-from <%= @leaveapplication.from %> to <%= @leaveapplication.to %>
-Total Leave is <%= (@leaveapplication.to.yday-@leaveapplication.from.yday)+1%>
-Please click on following link
+Hi Badri ,
+Mr.<%= @leaveapplication.name %> has sent a leave request. 
+Reason- <%= @leaveapplication.subject%>
+Emergency contact number- <%= @leaveapplication.description %>
+from <%= @leaveapplication.from %> to <%= @leaveapplication.to %>.
 
-<a href=http://localhost:3000/admin>Clik On It</a>
+
+Thank You,
+<a href=http://dry-brushlands-2732.herokuapp.com/admin>Clik On It</a>

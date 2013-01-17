@@ -2,22 +2,28 @@ ActiveAdmin.register Leaveapplication do
   form do |f|
 	f.inputs do
 		f.input :name
-		f.input :description
-		f.input :subject
-	    f.input :from
-	    f.input :to
+		f.input :description, :label => "Emergency_contact_details"
+		f.input :subject, :label =>"Reason"
+		f.inputs do
+	       f.input :from ,:as=> :date
+	       f.input :to, :as=> :date
+	     end  
 	    f.input :comment, :label => "Status" ,:collection => ["Pending", "Accepted", "Rejected"], :default => "pending"
   
      end
         f.buttons "Submit"
    end
-    index do
+    index do 
 		column :id
 		column :name
-		column :subject
-		column :from
-		column :to
-		column :comment, :label => "Status"		
+		# column :subject, :label => "Reason"
+		column :from, :sortable => :from do |r|
+			r.from.strftime("%d/%m/%Y")
+		end
+		column :to, :sortable => :to do |r|
+			r.to.strftime("%d/%m/%Y")
+		end
+		column "Status"	,:comment 	
         default_actions	
 	 end
 

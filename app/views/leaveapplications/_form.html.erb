@@ -10,26 +10,28 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :leavetype %><br />
-    <%= f.select :leavetype,:collection => [" ","C.L.", "P.L.", "Others"]  %>
-  </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :from %><br />
-    <%= f.datetime_select :from %>
+    <%= f.date_select :from %>
   </div>
   <div class="field">
     <%= f.label :to %><br />
-    <%= f.datetime_select :to %>
+    <%= f.date_select :to %>
   </div>
+  <div class="field">
+    <%= f.label :Leave_Type %><br />
+    <%= f.select :leavetype,:collection => [" ","C.L.", "P.L.","LWP", "LOP", "Others"]  %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :Reason %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :Emergency_contact_Number %><br />
+    <%= f.text_field :description %>
+  </div>
+  
    <%= f.hidden_field :comment %>  
   <div class="actions">
     <%= f.submit %>

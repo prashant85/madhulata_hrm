@@ -1,5 +1,3 @@
 Hi,
-<%=@leaveapplication.name %>
-Your Leave application is
-<%=@leaveapplication.comment %>
+Mr.<%=@leaveapplication.name %>, Your Leave request from <%= @leaveapplication.from.strftime("%d/%m/%Y") %> to <%= @leaveapplication.to.strftime("%d/%m/%Y") %> is <%=@leaveapplication.comment %>.
 Thank You.
