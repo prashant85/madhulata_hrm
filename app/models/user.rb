@@ -13,9 +13,10 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   def employee_information
-    id = self.id
+   id = self.id
     name = self.name
    EmployeeDetail.create(:name => self.name, :id => self.id)
+  
   end
 
   

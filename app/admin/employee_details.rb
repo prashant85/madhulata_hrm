@@ -1,4 +1,4 @@
-ActiveAdmin.register EmployeeDetail do
+                                                                                                                                                ActiveAdmin.register EmployeeDetail do
 	# actions :all
 	form do |f|
 		f.inputs "Personal Information" do
@@ -17,7 +17,7 @@ ActiveAdmin.register EmployeeDetail do
 		   f.input :sub_unit , :label => "Employee ID"
 		   f.input :job_specification
 		   f.input :location	
-		   f.input :employement_status, :as=> :select, :include_blank=> true ,:collection => ["Permanent", "trainee", "developer", "tester", "admin", "HR", "designer" ]
+		   f.input :employement_status, :as=> :select, :include_blank=> true ,:collection => ["Confirm", "trainee", "Consultant", "Other" ]
 		   f.input :join_date, :as => :date
 		   f.input :confirmation_date, :as => :date	
 		end

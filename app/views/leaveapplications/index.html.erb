@@ -1,13 +1,37 @@
 <h1>Listing Leave Applications</h1>
-<%= @leaveapplication.prashant %><br/>
+<b>Time: </b><%= @leaveapplication.prashant %><br/>
  <% if EmployeeDetail.find(current_user.id).join_date == nil %>
        <%= render :partial => 'errortype' %>
    <% else %>
-   <b>Total Day:</b><%= @leaveapplication.total_day%><br/>
-   <b>Casual Leave:</b><%= @leaveapplication.casual_leave.to_i %><br/>
-   <b>Priviledge Levae</b> :<%#= @leaveapplication.previlige_leave%><br/>
-   <b>Join Date:</b><%= EmployeeDetail.find(current_user.id).join_date.strftime("%d/%m/%Y") %><br/>
-       
+   <% a = EmployeeDetail.find(current_user.id).join_date %>
+   <b>Join Date:</b><%= a.strftime("%Y/%m/%d") %><br/>
+   <b>Total Day:</b><% if a.strftime("%y") == Time.now.strftime("%y") %>
+                       <%= a.yday %>
+                       <% elsif Time.now.strftime("%y").to_i-a.strftime("%y").to_i == 1 %>
+                         <%= Time.now.yday + 365 - a.yday %>
+                        <% else %>
+                         <%=  365*(Time.now.strftime("%y").to_i- a.strftime("%y").to_i-1) + (Time.now.yday + 365 - a.yday)%>
+                         <% end %><br/>
+   <b>Casual Leave:</b> <% if Time.now.strftime("%y").to_i == a.strftime("%y").to_i %>
+                              <% if a.strftime("%d") > 15 %>
+                                <%= (Time.now.strftime("%m").to_i - a.strftime("%m").to_i)-1 %>
+                              <% else %>
+                                <%= Time.now.strftime("%m").to_i - a.strftime("%m").to_i %>
+                                <% end %>
+                          <% else %>
+                          <%= Time.now.strftime("%m").to_i %>
+                          <% end %><br/>
+   <b>Priviledge Levae</b> :<% if Time.now.strftime("%y").to_i == a.strftime("%y").to_i %>
+                               <% if a.strftime("%d").to_i > 14 %>
+                                  <%= Time.now.strftime("%m").to_i- a.strftime("%m").to_i %>
+                               <% else %>
+                                  <%= (Time.now.strftime("%m").to_i- a.strftime("%m").to_i )-1 %>
+                               <% end %>
+                            <% else %> 
+                              <%= Time.now.strftime("%m").to_i %>
+                            <% end %>     
+   
+        
 <!-- <b>Total Days:</b> <%#=364 - EmployeeDetail.find(current_user.id).join_date.yday + Time.now.yday %></br> -->
 
 <table>
@@ -18,6 +42,7 @@
     <th>From</th>
     <th>To</th>
     <th>Status</th>
+    <th>Comment</th>
     <th>Actions</th>
   </tr>
 
@@ -32,6 +57,7 @@
     <td><%= leaveapplication.from.strftime("%d/%m/%y") %></td>
     <td><%= leaveapplication.to.strftime("%d/%m/%y") %></td>
     <td><%= leaveapplication.comment %></td>
+    <td><%= leaveapplication.commentonleave %></td>
     <td><%= link_to 'Show', leaveapplication %></td>
     
   </tr

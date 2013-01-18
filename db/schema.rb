@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117103528) do
+ActiveRecord::Schema.define(:version => 20130118080948) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130117103528) do
     t.integer  "employee_detail_id"
     t.integer  "casual_leave"
     t.string   "previlige_leave"
+    t.string   "commentonleave"
   end
 
   create_table "photos", :force => true do |t|
