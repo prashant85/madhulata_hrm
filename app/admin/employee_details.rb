@@ -1,4 +1,4 @@
-                                                                                                                                                ActiveAdmin.register EmployeeDetail do
+     ActiveAdmin.register EmployeeDetail do                                                                                                                                           ActiveAdmin.register EmployeeDetail do
 	# actions :all
 	form do |f|
 		f.inputs "Personal Information" do
@@ -6,11 +6,10 @@
 			f.input :father_name
 			f.input :date_of_birth, :start_year => Time.now.year - 100, :end_year => Time.now.year + 100, :as => :date 
 			f.input :email
-			f.input :phone_no, :label => "Contact No."
+			 f.input :phone_number, :label => "Contact No."
 			f.input :local_address, :label => "Correspondence Address"
 			f.input :permanent_address
-			f.input :blood_group	
-		    # f.input :category, :as=> :select, :include_blank => true, :collection => ["gen", "freedomFighter", "Handicap", "special"]
+			f.input :blood_group
 		end
 		f.inputs "Job Details" do
 		   f.input :job_title
@@ -46,7 +45,7 @@
 		column :date_of_birth
 		column :father_name
 		column :email
-		column :phone_no
+	    column :phone_number
 		column :join_date
 		column :permanent_address
 		column :local_address
@@ -67,7 +66,7 @@
               rescue => e
               end  
             end
-            row :phone_no
+            row :phone_number
             row :father_name
             row :date_of_birth
             row :blood_group
@@ -81,4 +80,5 @@
            
 		end
 	end
+ end
 end
