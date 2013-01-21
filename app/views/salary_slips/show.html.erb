@@ -24,6 +24,6 @@
 <p> <b>Locations:</b><%= EmployeeDetail.find(@salary_slip.employee_detail_id).location %></p>
 
 
-<%= link_to 'Back', salary_slips_path %>
-<%= link_to "pdf format", salary_slips_path, :format => 'pdf' %>
+<%= link_to 'Back', salary_slips_path %><br/>
+<%= link_to "pdf format", salary_slip_path(@salary_slip, :format => 'pdf') %>
  
