@@ -1,0 +1,29 @@
+<h1>Listing Salary Slips</h1>
+
+<table>
+  <tr>
+    <th>Gross salary</th>
+    <th>Deduction</th>
+    <th>Net salary</th>
+    <th>Employee detail</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @salary_slips.each do |salary_slip| %>
+  <tr>
+    <td><%= salary_slip.gross_salary %></td>
+    <td><%= salary_slip.deduction %></td>
+    <td><%= salary_slip.net_salary %></td>
+    <td><%= salary_slip.employee_detail_id %></td>
+    <td><%= link_to 'Show', salary_slip %></td>
+    <td><%= link_to 'Edit', edit_salary_slip_path(salary_slip) %></td>
+    <td><%= link_to 'Destroy', salary_slip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Salary slip', new_salary_slip_path %>

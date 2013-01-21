@@ -1,0 +1,13 @@
+ development:
+ consumer_key: 8ti7qntpcysl91j
+ consumer_secret: i0tshr4cpd1pa4e
+   :reconnect => true
+
+
+ production:  
+ consumer_key: wm3wpft1drugdvg
+ consumer_secret: xojx1dzy8sq9mpa
+ :reconnect => false
+
+  :dropbox
+  

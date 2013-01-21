@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gross Salary:</b>
+  <%= @salary_slip.gross_salary %>
+</p>
+
+<p>
+  <b>Deduction:</b>
+  <%= @salary_slip.deduction %>
+</p>
+
+<p>
+  <b>Net Salary:</b>
+  <%= @salary_slip.net_salary %>
+</p>
+<p><b>Month: <%= @salary_slip.selecttime.strftime("%B") %><%= @salary_slip.selecttime.strftime("%Y") %></p>
+<p> <b>Employee Name:</b><%= EmployeeDetail.find(@salary_slip.employee_detail_id).name %></p>
+<p> <b>Salary Account No:</b><%= EmployeeDetail.find(@salary_slip.employee_detail_id).account_no %></p>
+<p> <b> Date of Joining:</b>
+<%= EmployeeDetail.find(@salary_slip.employee_detail_id).join_date.strftime("%Y/%m/%d") %></p>
+<p> <b> Employee Id:</b><%= EmployeeDetail.find(@salary_slip.employee_detail_id).sub_unit %></p>
+<p> <b>Designations:</b><%= EmployeeDetail.find(@salary_slip.employee_detail_id).job_specification %></p>
+<p> <b>Locations:</b><%= EmployeeDetail.find(@salary_slip.employee_detail_id).location %></p>
+
+
+<%= link_to 'Back', salary_slips_path %>
+<%= link_to "pdf format", salary_slips_path, :format => 'pdf' %>
+ 

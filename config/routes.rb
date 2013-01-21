@@ -1,10 +1,13 @@
 MadhulataInfotechHrm::Application.routes.draw do
+  resources :salary_slips
+
+
   devise_for :users
   resources :leaveapplications
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

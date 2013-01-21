@@ -1,5 +1,5 @@
      ActiveAdmin.register EmployeeDetail do                                                                                                                                           ActiveAdmin.register EmployeeDetail do
-	# actions :all
+	 actions :all
 	form do |f|
 		f.inputs "Personal Information" do
 			f.input :name
@@ -10,6 +10,7 @@
 			f.input :local_address, :label => "Correspondence Address"
 			f.input :permanent_address
 			f.input :blood_group
+			f.input :account_no
 		end
 		f.inputs "Job Details" do
 		   f.input :job_title
@@ -70,6 +71,7 @@
             row :father_name
             row :date_of_birth
             row :blood_group
+            row :account_no
             row :permanent_address
             row :local_address
             row :location
