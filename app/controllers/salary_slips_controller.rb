@@ -17,8 +17,11 @@ class SalarySlipsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.pdf { render :text => PDFKit.new( salary_slip_path(@salary_slip) ).to_pdf }
-    end
+      # format.pdf { render :text => PDFKit.new( salary_slip_path(@salary_slip) ).to_pdf }
+      format.pdf do 
+        render :pdf => "print.html.erb"
+      end
+    end 
   end
 
   # GET /salary_slips/new
@@ -45,8 +48,7 @@ class SalarySlipsController < ApplicationController
     respond_to do |format|
       if @salary_slip.save
         format.html { redirect_to @salary_slip, notice: 'Salary slip was successfully created.' }
-        format.json { render json: @salary_slip, status: :created, location: @salary_slip }
-                
+        format.json { render json: @salary_slip, status: :created, location: @salary_slip }               
       else
         format.html { render action: "new" }
         format.json { render json: @salary_slip.errors, status: :unprocessable_entity }

@@ -39,7 +39,8 @@ gem 'paperclip'
 gem "aws-sdk"
 gem "pg"
 gem 'heroku'
-gem 'pdfkit' 
+# gem 'pdfkit' 
 gem 'bootstrap-sass', '2.1'
 gem 'dropbox'
 gem 'wkhtmltopdf'
+gem 'wicked_pdf'
