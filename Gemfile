@@ -39,7 +39,7 @@ gem 'paperclip'
 gem "aws-sdk"
 gem "pg"
 gem 'heroku'
-# gem 'pdfkit' 
+gem "paperclipdropbox"
 gem 'bootstrap-sass', '2.1'
 gem 'dropbox'
 gem 'wkhtmltopdf'

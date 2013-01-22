@@ -83,17 +83,5 @@ class SalarySlipsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  # def generate
-  #   respond_to do |format|
-  #     format.html
-  #     format.pdf { prawnto :filename => 'print.pdf' }
-  #   end
-  # end
-  # def export_pdf
-  #     html = render :layout => false 
-  #     kit = PDFKit.new(html)
-  #     kit.stylesheets << RAILS_ROOT + '/public/stylesheets/your_css.css' 
-  #     send_data(kit.to_pdf, :filename => "show.pdf", :type => 'application/pdf')
-  # end
-
+  
 end

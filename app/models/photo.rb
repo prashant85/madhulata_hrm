@@ -3,6 +3,8 @@ class Photo < ActiveRecord::Base
    belongs_to :employee_detail
    has_attached_file :image,
     :styles => { :medium => "300x300>", :thumb => "100x100>", :large => "700x500>" },
-    :storage => :dropbox,
-    :path => "/:application_name/:model_name/:id/:style/:filename"
+    :storage =>  :Dropboxstorage,
+    # :path => "/:application_name/:model_name/:id/:style/:filename"
+    :url => "/employee_details/:id/:style/:basename.:extension",  
+    :path => ":rails_root/public/emoloyee_details/:id/:style/:basename.:extension"
 end
