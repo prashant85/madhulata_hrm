@@ -1,4 +1,5 @@
 class SalarySlipsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /salary_slips
   # GET /salary_slips.json
   def index
@@ -19,7 +20,7 @@ class SalarySlipsController < ApplicationController
       format.html # show.html.erb
       # format.pdf { render :text => PDFKit.new( salary_slip_path(@salary_slip) ).to_pdf }
       format.pdf do 
-        render :pdf => "print.html.erb"
+        render :pdf => "show.html.erb"
       end
     end 
   end

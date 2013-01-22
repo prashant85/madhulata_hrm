@@ -42,6 +42,5 @@ gem 'heroku'
 gem "paperclipdropbox"
 gem 'bootstrap-sass', '2.1'
 gem 'dropbox'
-# gem 'wkhtmltopdf'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
