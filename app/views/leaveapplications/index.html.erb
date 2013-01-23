@@ -15,6 +15,7 @@
     <th>From</th>
     <th>To</th>
     <th>Status</th>
+    <th>Leave Type</th>
     <th>Comment</th>
     <th>Actions</th>
   </tr>
@@ -30,6 +31,7 @@
     <td><%= leaveapplication.from.strftime("%d/%m/%y") %></td>
     <td><%= leaveapplication.to.strftime("%d/%m/%y") %></td>
     <td><%= leaveapplication.comment %></td>
+    <td><%= leaveapplication.leavetype %></td>
     <td><%= leaveapplication.commentonleave %></td>
     <td><%= link_to 'Show', leaveapplication %></td>
     

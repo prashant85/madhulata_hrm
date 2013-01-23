@@ -9,7 +9,7 @@ ActiveAdmin.register Leaveapplication do
 	       f.input :to, :as=> :date
 	     end  
 	    f.input :comment, :label => "Status" ,:collection => ["Pending", "Accepted", "Rejected","Revoked"], :default => "pending"
-        # f.input :leave_type, :label => "Comment"
+        f.input :leavetype
         f.input :commentonleave, :label => "Comment"
      end
         f.buttons "Submit"
@@ -25,8 +25,8 @@ ActiveAdmin.register Leaveapplication do
 			r.to.strftime("%d/%m/%Y")
 		end
 		column "Status"	,:comment 	
-		#column "Comment", :leave_type
-		column "Comment", :commentonleave
+		column :leavetype
+		# column "Comment", :commentonleave
         default_actions	
 	 end
 
@@ -35,7 +35,7 @@ ActiveAdmin.register Leaveapplication do
 	 		row :name
 	 		row :from
 	 		row :to 
-	 		
+	 		row :leavetype 
 	 	 end
 	 end	
 
