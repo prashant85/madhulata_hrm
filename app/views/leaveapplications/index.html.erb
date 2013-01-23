@@ -3,41 +3,14 @@
  <% if EmployeeDetail.find(current_user.id).join_date == nil %>
        <%= render :partial => 'errortype' %>
    <% else %>
-   <% a = EmployeeDetail.find(current_user.id).join_date %>
-   <b>Join Date:</b><%= a.strftime("%Y/%m/%d") %><br/>
-   <b>Total Day:</b><% if a.strftime("%y") == Time.now.strftime("%y") %>
-                       <%= a.yday %>
-                       <% elsif Time.now.strftime("%y").to_i-a.strftime("%y").to_i == 1 %>
-                         <%= Time.now.yday + 365 - a.yday %>
-                        <% else %>
-                         <%=  365*(Time.now.strftime("%y").to_i- a.strftime("%y").to_i-1) + (Time.now.yday + 365 - a.yday)%>
-                         <% end %><br/>
-   <b>Casual Leave:</b> <% if Time.now.strftime("%y").to_i == a.strftime("%y").to_i %>
-                              <% if a.strftime("%d") > 15 %>
-                                <%= (Time.now.strftime("%m").to_i - a.strftime("%m").to_i)-1 %>
-                              <% else %>
-                                <%= Time.now.strftime("%m").to_i - a.strftime("%m").to_i %>
-                                <% end %>
-                          <% else %>
-                          <%= Time.now.strftime("%m").to_i %>
-                          <% end %><br/>
-   <b>Priviledge Levae</b> :<% if Time.now.strftime("%y").to_i == a.strftime("%y").to_i %>
-                               <% if a.strftime("%d").to_i > 14 %>
-                                  <%= Time.now.strftime("%m").to_i- a.strftime("%m").to_i %>
-                               <% else %>
-                                  <%= (Time.now.strftime("%m").to_i- a.strftime("%m").to_i )-1 %>
-                               <% end %>
-                            <% else %> 
-                              <%= Time.now.strftime("%m").to_i %>
-                            <% end %>     
-   
-        
-<!-- <b>Total Days:</b> <%#=364 - EmployeeDetail.find(current_user.id).join_date.yday + Time.now.yday %></br> -->
+   <b>Join Date:</b><%= join_date.strftime("%Y/%m/%d") %><br/>
+   <b>Total Day:</b><%= total_day %><br/>
+   <b>Casual Leave:</b> <%= casual_leave %><br/>
+   <b>Priviledge Levae</b><%= priviledge_leave %> 
+   <b>Toatal Leave</b><%= total_leave %>
 
 <table>
   <tr>
-    <!-- <th>Name</th> -->
-   <!--  <th>Subject</th> -->
     <th>Leavetype</th>
     <th>From</th>
     <th>To</th>

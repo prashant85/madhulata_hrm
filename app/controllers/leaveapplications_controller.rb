@@ -85,6 +85,22 @@ class LeaveapplicationsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
+  # # def total_day
+  # #   Time.now
+  # # end
+  # # def total_leave
+  # # end
+  # # def priviledge_leave
+  # # end
+  # # def casual_leave
+  # # end
+  # def total_leave
+  #   if total_day >180
+  #       priviledge_leave+casual_leave
+  #   else
+  #       casual_leave
+  #   end 
+  # end
   
 end

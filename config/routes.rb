@@ -2,6 +2,11 @@ MadhulataInfotechHrm::Application.routes.draw do
   resources :salary_slips
   resources :leaveapplications
   devise_for :users
+  # get "leaveapplications#casual_leave"
+  # get "leaveapplications#priviledge_leave"
+  #get "leaveapplications#total_day"
+  # get "leaveapplications#total_leave"
+  
   
   ActiveAdmin.routes(self)
 
