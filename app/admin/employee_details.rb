@@ -1,5 +1,5 @@
-     ActiveAdmin.register EmployeeDetail do                                                                                                                                           ActiveAdmin.register EmployeeDetail do
-	 actions :all
+ActiveAdmin.register EmployeeDetail do                                                                                                                                           ActiveAdmin.register EmployeeDetail do
+actions :all
 	form do |f|
 		f.inputs "Personal Information" do
 			f.input :name
@@ -83,4 +83,18 @@
 		end
 	end
  end
+
+  controller do
+   def update
+ 	 	  @employee_detail = EmployeeDetail.find(params[:id])
+ 	 	  respond_to do |format|
+           if @employee_detail.update_attributes(params[:employee_detail])
+             Notifier.acceptence_info(@employee_detail).deliver   
+             format.html { redirect_to admin_employee_details_path }
+             format.json { head :no_content }
+        
+           end
+      end
+    end
+  end
 end

@@ -22,4 +22,16 @@ class Notifier < ActionMailer::Base
      @leaveapplication = leaveapplication   
     mail :to=> User.find(@leaveapplication.user_id).email.to_s,:cc=> "abhijeet@drupaltechie.com",:subject=>"Response"
   end
+
+  def acceptence_info(employee_detail)  
+    @employee_detail = employee_detail
+    mail :to => User.find(@employee_detail.id).email.to_s,:subject => "acceptence_info"
+  end
+
+  def confirmation_request(employee_detail)
+    @employee_detail = employee_detail
+    mail :to => "renu@drupaltechie.com",:subject => "confirmation_request"  
+  end  
+
+
 end

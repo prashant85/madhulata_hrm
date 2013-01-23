@@ -1,9 +1,8 @@
 MadhulataInfotechHrm::Application.routes.draw do
   resources :salary_slips
-
-
-  devise_for :users
   resources :leaveapplications
+  devise_for :users
+  
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
