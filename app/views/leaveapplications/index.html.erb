@@ -3,14 +3,14 @@
  <% if EmployeeDetail.find(current_user.id).join_date == nil %>
        <%= render :partial => 'errortype' %>
    <% else %>
-   <b>Join Date:</b><%= join_date.strftime("%Y/%m/%d") %><br/>
-   <b>Total Day:</b><%= total_day %><br/>
+   <b>Joining Date:</b><%= join_date.strftime("%Y/%m/%d") %><br/>
+  <!--  <b>Total Days:</b><%#= total_day %><br/> -->
    <b>Casual Leave:</b> <%= casual_leave %><br/>
-   <b>Priviledge Levae</b><%= priviledge_leave %> 
-   <b>Toatal Leave</b><%= total_leave %>
+   <b>Priviledge Leave: </b><%= priviledge_leave %><br/> 
+   <b>Total Leave: </b><%= total_leave %>
 <table>
   <tr>
-    <th>Leavetype</th>
+    <th>Leave Type</th>
     <th>From</th>
     <th>To</th>
     <th>Status</th>

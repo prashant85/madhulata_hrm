@@ -28,7 +28,7 @@ module ApplicationHelper
   	    if total_day > 180
   		   casual_leave
     	else
-  		  "Not applicatable for priviledge_leave"
+  		  "Not Applicable for Priviledge Leave"
         end
   end
 
