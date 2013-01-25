@@ -97,6 +97,17 @@ actions :all
         
            end
       end
+   end
+
+    def destroy
+       @employee_detail = EmployeeDetail.find(params[:id])
+       @user = User.find(@employee_detail.id)
+       @employee_detail.destroy
+       @user.destroy
+            respond_to do |format|
+                   format.html { redirect_to admin_employee_details_path }
+                  format.json { head :no_content }
+            end
     end
   end
 end
