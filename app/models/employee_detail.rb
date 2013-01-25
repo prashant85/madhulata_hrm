@@ -5,7 +5,6 @@ class EmployeeDetail < ActiveRecord::Base
     :phone_no, :sub_unit, :last_job_details_attributes, :user_id, :confirmation_date, :father_name, :email, 
     :blood_group, :date_of_birth, :phone_number,:account_no
   belongs_to :user
-  validates :sub_unit, :uniqueness => true
   has_many :leaveapplications
   has_many :salary_slips
   has_many :photos
