@@ -17,10 +17,10 @@ module ApplicationHelper
   	 if Time.now.strftime("%y").to_i != join_date.strftime("%y").to_i
   		Time.now.strftime("%m").to_i 
   	 elsif
-        a.strftime("%d") > 15 
-        (Time.now.strftime("%m").to_i - a.strftime("%m").to_i)-1 
+        join_date.strftime("%d") > 15 
+        (Time.now.strftime("%m").to_i - join_date.strftime("%m").to_i)-1 
      else 
-        Time.now.strftime("%m").to_i - a.strftime("%m").to_i 
+        Time.now.strftime("%m").to_i - join_date.strftime("%m").to_i 
      end     
   end 
 
