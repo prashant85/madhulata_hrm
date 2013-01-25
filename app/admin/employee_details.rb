@@ -1,6 +1,7 @@
 ActiveAdmin.register EmployeeDetail do                                                                                                                                           ActiveAdmin.register EmployeeDetail do
 actions :all
 	form do |f|
+
 		f.inputs "Personal Information" do
 			f.input :name
 			f.input :father_name
@@ -14,7 +15,7 @@ actions :all
 		end
 		f.inputs "Job Details" do
 		   f.input :job_title
-		   f.input :sub_unit , :label => "Employee ID"
+		   f.input :sub_unit , :label => "Employee ID", :uniqueness => true
 		   f.input :job_specification
 		   f.input :location	
 		   f.input :employement_status, :as=> :select, :include_blank=> true ,:collection => ["Confirm", "trainee", "Consultant", "Other" ]
@@ -41,8 +42,9 @@ actions :all
 	    f.buttons "submit"
 	end	
    index do
-		column :id
+    column "S.No", :id
 		column :name
+    column "Employee Id",:sub_unit
 		column :date_of_birth
 		column :father_name
 		column :email

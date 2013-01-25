@@ -26,6 +26,7 @@ ActiveAdmin.register Leaveapplication do
 		end
 		column "Status"	,:comment 	
 		column :leavetype
+        # column :total_leave
 		# column "Comment", :commentonleave
         default_actions	
 	 end
@@ -36,6 +37,7 @@ ActiveAdmin.register Leaveapplication do
 	 		row :from
 	 		row :to 
 	 		row :leavetype 
+
 	 	 end
 	 end	
 

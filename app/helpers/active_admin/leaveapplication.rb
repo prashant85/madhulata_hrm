@@ -1,0 +1,3 @@
+module ActiveAdmin::LeaveapplicationsHelper
+
+end
