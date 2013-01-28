@@ -9,7 +9,7 @@ class Notifier < ActionMailer::Base
   def sending_request(leaveapplication)
     @leaveapplication = leaveapplication 
      mail :to => "abhijeet@drupaltechie.com",
-          :bcc => ["renu@drupaltechie.com"],:cc => ["prashant@rubyonrails4ror.com"],
+          :bcc => ["renu@drupaltechie.com"],
          :subject => 'Leave application'
   end
 
