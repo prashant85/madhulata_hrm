@@ -10,7 +10,8 @@ ActiveAdmin.register SalarySlip do
   end
 
  index do
- 	column "Employee Name", :employee_detail
+ 	column :id
+ 	column "Employee Name", :employee_detail	
  	column :gross_salary
  	column :deduction
  	column :net_salary
