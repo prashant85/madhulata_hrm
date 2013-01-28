@@ -11,7 +11,10 @@ ActiveAdmin.register SalarySlip do
 
  index do
  	column :id
- 	column "Employee Name", :employee_detail	
+ 	column "Employee Id",:employee_detail,:sortable => :employee_detail do |r|
+ 		  r.employee_detail.sub_unit
+ 		end
+ 	column "Employee Name", :employee_detail
  	column :gross_salary
  	column :deduction
  	column :net_salary
