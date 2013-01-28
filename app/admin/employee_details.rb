@@ -102,12 +102,17 @@ actions :all
     def destroy
        @employee_detail = EmployeeDetail.find(params[:id])
        @user = User.find(@employee_detail.id)
-       @leaveapplications = Leaveapplication.find(@employee_detail.id)
-       @salaryslips = SalarySlip.find(@employee_detail.id)
-       @employee_detail.destroy
-       @user.destroy
-       @salaryslips.destroy
-       @leaveapplications.destroy
+       @leaveapplications = Leaveapplication.find_all_by_employee_detail_id(@employee_detail.id)
+       @salaryslips = SalarySlip.find_all_by_employee_detail_id(@employee_detail.id)
+        @leaveapplications.each do |i|
+          i.destroy 
+        end
+        @salaryslips.each do |i|
+          i.destroy
+        end
+        @user.destroy
+        @employee_detail.destroy
+               
             respond_to do |format|
                    format.html { redirect_to admin_employee_details_path }
                   format.json { head :no_content }
