@@ -9,4 +9,11 @@ ActiveAdmin.register SalarySlip do
   	f.buttons "Submit"
   end
 
+ index do
+ 	column "Employee Name", :employee_detail
+ 	column :gross_salary
+ 	column :deduction
+ 	column :net_salary
+ 	default_actions
+ end
 end

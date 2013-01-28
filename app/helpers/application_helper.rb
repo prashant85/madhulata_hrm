@@ -1,7 +1,7 @@
 module ApplicationHelper
 	def total_day 
 	 if join_date.strftime("%y") == Time.now.strftime("%y")
-          join_date.yday 
+          Time.now.yday.to_i-join_date.yday.to_i 
       elsif Time.now.strftime("%y").to_i-join_date.strftime("%y").to_i == 1 
            Time.now.yday + 365 - join_date.yday 
       else 
