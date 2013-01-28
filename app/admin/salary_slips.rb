@@ -14,6 +14,9 @@ ActiveAdmin.register SalarySlip do
  	column :gross_salary
  	column :deduction
  	column :net_salary
+ 	column :selecttime, :sortable => :selecttime do |r|
+			r.selecttime.strftime("%B/%Y")
+		end
  	default_actions
  end
 end
