@@ -15,8 +15,11 @@ ActiveAdmin.register Leaveapplication do
         f.buttons "Submit"
    end
     index do 
-		column :id
+		column "S.No",:id
 		column :name
+		column "Employee Id",:employee_detail,:sortable => :employee_detail do |r|
+ 		  r.employee_detail.sub_unit
+ 		end
 		# column :subject, :label => "Reason"
 		column :from, :sortable => :from do |r|
 			r.from.strftime("%d/%m/%Y")
@@ -25,7 +28,7 @@ ActiveAdmin.register Leaveapplication do
 			r.to.strftime("%d/%m/%Y")
 		end
 		column "Status"	,:comment 	
-		column :leavetype
+		column "Leave Type",:leavetype
         # column :total_leave
 		# column "Comment", :commentonleave
         default_actions	

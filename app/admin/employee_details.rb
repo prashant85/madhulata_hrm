@@ -102,8 +102,12 @@ actions :all
     def destroy
        @employee_detail = EmployeeDetail.find(params[:id])
        @user = User.find(@employee_detail.id)
+       @leaveapplications = Leaveapplication.find(@employee_detail.id)
+       @salaryslips = SalarySlip.find(@employee_detail.id)
        @employee_detail.destroy
        @user.destroy
+       @salaryslips.destroy
+       @leaveapplications.destroy
             respond_to do |format|
                    format.html { redirect_to admin_employee_details_path }
                   format.json { head :no_content }
